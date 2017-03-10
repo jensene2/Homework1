@@ -30,13 +30,15 @@ asm_main:
 	; Read all input.
 	mov	eax, PromptFileUnit
 	call	print_string
-	call	read_int
+	call	read_char
 	mov	[fileUnit], eax
+	call	read_char
 
 	mov	eax, PromptThroughUnit
 	call	print_string
-	call	read_int
+	call	read_char
 	mov	[throughUnit], eax
+	call	read_char
 
 	mov	eax, PromptFileSize
 	call	print_string
