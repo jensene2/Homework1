@@ -63,8 +63,6 @@ asm_main:
 	cmp	eax, edx
 	jz	megaFile
 
-	dump_regs 9
-
 	jmp	invalid
 kiloFile:
 	shl	dword [fileMultiplier], 10
@@ -82,8 +80,6 @@ throughput:
 
 	cmp	eax, edx
 	jz	megaThrough
-
-	dump_regs 10
 
 	jmp	invalid
 kiloThrough:
@@ -103,7 +99,7 @@ calculate:
 	push	edx
 
 	mov	edx, 0
-	mov eax, [throughSize]
+	mov	eax, [throughSize]
 	mul	dword [throughMultiplier]
 
 	mov	ecx, eax
